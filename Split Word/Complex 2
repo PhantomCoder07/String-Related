@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char str[100];
+    printf ("Enter the string: ");
+    gets (str);
+    char ch[2];
+    printf ("Enter the parameter for split: ");
+    scanf ("%s",ch);
+    int l=strlen(str),j=0;
+    char sp[100];
+    for (int i=0; i<l; i++)
+    {
+        if (str[i]!=ch[0])
+            sp[j++]=str[i];
+        else
+        {
+            sp[j]='\0';
+            printf("%s\n",sp);
+            j=0;
+        }
+    }
+    if (j>0)
+    {
+        sp[j]='\0';
+        printf("%s\n",sp);
+    }
+    return 0;
+}
