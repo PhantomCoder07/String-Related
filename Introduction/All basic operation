@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char str3[100],str4[100];
+    char str1[100] = "Hello World!";
+    char str2[150] = "Hello Ahad!";
+    char str5[100] = "Hello Classmates!";
+    printf ("----------Operations of String----------\n\n");
+    printf ("The 1st string is: '%s'\n",str1);
+    printf ("The 2nd string is: '%s'\n\n",str2);
+    printf ("Use of sizeof() operator:\n");
+    printf ("The memory size of string 1: %d\n", sizeof(str1));
+    printf ("The memory size of string 2: %d\n\n", sizeof(str2));
+    printf ("Use of strlen() operator:\n");
+    printf ("Total Character in '%s': %d\n",str1, strlen(str1));
+    printf ("Total Character in '%s': %d\n\n",str2, strlen(str2));
+    printf ("Use of strcmp() operator:\n");
+    printf ("Comparing string 1 and string 2:\n");
+    if (strcmp(str1,str2)==0)
+        printf ("The strings are same.\n\n");
+    else
+        printf ("The strings are different.\n\n");
+    printf ("Use of strcpy() and strncpy() operators:\n");
+    printf ("Copy string 1 in another string 3: '%s' (Copied successfully)\n",strcpy(str3,str1));
+    printf ("Copy first 5 character of string 2 in another string 4: '%s' (Copied successfully)\n\n",strncpy(str4,str2,5));
+    printf ("Use of strncmp() operator:\n");
+    printf ("Comparing string 3 and string 4, up to 5 character:\n");
+    if (strncmp(str3,str4,5)==0)
+        printf ("The strings are same.\n\n");
+    else
+        printf ("The strings are different.\n\n");
+    printf ("Use of strrev() operator:\n");
+    printf ("The reverse of string 1: '%s'\n",strrev(str1));
+    strrev(str1);
+    printf ("The reverse of string 2: '%s'\n\n",strrev(str2));
+    strrev(str2);
+    printf ("Use of strcat() operator:\n");
+    printf ("Combination of string 1 and 2: '%s'\n",strcat(str1,str2));
+    printf ("Total Character of combine string: %d\n",strlen(str1));
+    printf ("The reverse of combination string: '%s'\n\n",strrev(str1));
+    strrev(str1);
+    printf ("Use of strncat() operator:\n");
+    printf ("Combination of string 4 and string 3 up to 5 character: '%s'\n\n",strncat(str4,str3,5));
+    printf ("Another string 5: '%s'\n",str5);
+    printf ("Total Character in '%s': %d\n\n",str5, strlen(str5));
+    printf ("Use of strchr() operator:\n");
+    char *p=strchr(str5,'e');
+    printf ("First 'e' is found at position: %ld\n\n",p-str5+1);
+    printf ("Use of strrchr() operator:\n");
+    char *ph=strrchr(str5,'e');
+    printf ("First 'e' is found at position: %ld\n\n",ph-str5+1);
+    printf ("Use of strstr() operator:\n");
+    char *sub=strstr(str5,"Class");
+    if (sub==NULL)
+        printf ("Substring '%s' not found\n\n",sub);
+    else
+        printf ("Substring '%s' found\n\n",sub);
+    printf ("Use of strtok() operator:\n");
+    char *token=strtok(str1," !");
+    printf ("Token of Combine string of 1 and 2:\n");
+    while (token!=NULL)
+    {
+        printf ("%s\n",token);
+        token=strtok(NULL," !");
+    }
+    printf ("\n");
+    return 0;
+}
