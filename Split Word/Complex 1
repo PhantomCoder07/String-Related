@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+void split (char *s, char *c)
+{
+    char *sp=strtok(s,c);
+    while (sp!=NULL)
+    {
+        printf("%s\n",sp);
+        sp=strtok(NULL,c);
+    }
+}
+int main()
+{
+    char str[100];
+    printf ("Enter the string: ");
+    gets (str);
+    char ch[2];
+    printf ("Enter the parameter for split: ");
+    scanf ("%s",ch);
+    split(str,ch);
+    return 0;
+}
