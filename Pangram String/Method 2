@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+int main()
+{
+    char str[100];
+    printf ("Enter the string: ");
+    gets(str);
+    int cr[26]= {0};
+    int c=0,j=0;
+    char strr[26];
+    int l=strlen(str);
+    for (int i=0; i<l; i++)
+    {
+        str[i]=tolower(str[i]);
+        cr[str[i]-'a']=1;
+    }
+    for (int i=0; i<26; i++)
+    {
+        if (cr[i]==1)
+            c++;
+        else
+            strr[j++]='a'+i;
+    }
+    if (c==26)
+        printf("The string is a pangram.\n");
+    else
+    {
+        printf("The string is not pangram.\n");
+        printf("Missing characters: ");
+        for (int i=0; i<j; i++)
+        {
+            printf("%c ",strr[i]);
+        }
+    }
+    return 0;
+}
