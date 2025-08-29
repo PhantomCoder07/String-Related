@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+    char str[100];
+    printf ("Enter the string: ");
+    gets (str);
+    char ch;
+    printf("Enter the character that will be removed: ");
+    scanf("%c",&ch);
+    if (ch>='A' && ch<='Z')
+        ch=ch+32;
+    printf("The string after removing that character: ");
+    for (int i=0; str[i]!='\0'; i++)
+    {
+        char st;
+        if (str[i]>='A' && str[i]<='Z')
+            st=str[i]+32;
+        else
+            st=str[i];
+        if (st!=ch)
+            printf("%c",str[i]);
+    }
+    return 0;
+}
